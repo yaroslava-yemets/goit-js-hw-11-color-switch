@@ -32,7 +32,7 @@ const colors = [
           btnIsActive = true;
           const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
           refs.body.style.backgroundColor = colors[randomIntegerNumber];
-      }, 15);
+      }, 1000);
   };
 
   function onStopClick () {

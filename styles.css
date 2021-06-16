@@ -1,6 +1,7 @@
 .btn-container {
   margin: 0 auto;
   padding: 150px;
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
