@@ -18,27 +18,20 @@ const colors = [
   };
 
   let intervalId = null;
-  let btnIsActive = false;
 
   refs.startBtn.addEventListener('click', onStartClick);
   refs.stopBtn.addEventListener('click', onStopClick);
 
   function onStartClick () {
-      if(btnIsActive){
-          return;
-      };
-
+    refs.startBtn.setAttribute('disabled', true);
       intervalId = setInterval(() => {
-          btnIsActive = true;
-          const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
-          refs.body.style.backgroundColor = colors[randomIntegerNumber];
-          console.log('click on button');
-          console.log(refs.body.style.backgroundColor = colors[randomIntegerNumber]);
+        const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
+        refs.body.style.backgroundColor = colors[randomIntegerNumber];
       }, 1000);
   };
 
   function onStopClick () {
-    btnIsActive = false;
+    refs.startBtn.removeAttribute('disabled');
     clearInterval(intervalId);
   };
 
