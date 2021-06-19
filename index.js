@@ -18,20 +18,27 @@ const colors = [
   };
 
   let intervalId = null;
+  let btnIsActive = false;
 
   refs.startBtn.addEventListener('click', onStartClick);
   refs.stopBtn.addEventListener('click', onStopClick);
 
   function onStartClick () {
-    refs.startBtn.setAttribute('disabled', true);
+    if (btnIsActive) {
+      return;
+    }; 
+
+    btnIsActive = true;
+    
       intervalId = setInterval(() => {
+        console.log('start');
         const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
         refs.body.style.backgroundColor = colors[randomIntegerNumber];
       }, 1000);
   };
 
   function onStopClick () {
-    refs.startBtn.removeAttribute('disabled');
     clearInterval(intervalId);
+    btnIsActive = false;
   };
 
