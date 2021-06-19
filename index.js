@@ -31,7 +31,6 @@ const colors = [
     btnIsActive = true;
     
       intervalId = setInterval(() => {
-        console.log('start');
         const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
         refs.body.style.backgroundColor = colors[randomIntegerNumber];
       }, 1000);
