@@ -32,6 +32,8 @@ const colors = [
           btnIsActive = true;
           const randomIntegerNumber = randomIntegerFromInterval(0, colors.length - 1);
           refs.body.style.backgroundColor = colors[randomIntegerNumber];
+          console.log('click on button');
+          console.log(refs.body.style.backgroundColor = colors[randomIntegerNumber]);
       }, 1000);
   };
 
